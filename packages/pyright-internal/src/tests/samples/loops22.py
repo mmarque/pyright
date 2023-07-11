@@ -14,7 +14,7 @@ class ListNode:
 
 def has_cycle(head: ListNode | None) -> bool:
     fast_head = head
-    while head and fast_head:
+    while fast_head and fast_head:
         fast_head = fast_head.next
         if fast_head:
             fast_head = fast_head.next

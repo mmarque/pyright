@@ -16,51 +16,35 @@ def assert_never(val: NoReturn):
 
 
 def func1(a: SomeEnum):
-    if a is SomeEnum.VALUE1:
-        pass
-    elif a is SomeEnum.VALUE2:
-        pass
-    else:
+    if a is not SomeEnum.VALUE1 and a is not SomeEnum.VALUE2:
         assert_never(a)
 
 
 def func2(a: SomeEnum):
-    if a is SomeEnum.VALUE1:
-        pass
-    else:
+    if a is not SomeEnum.VALUE1:
         # This should generate an error because
         # a hasn't been narrowed to Never.
         assert_never(a)
 
 
 def func3(a: SomeEnum):
-    if not a is not SomeEnum.VALUE1:
-        pass
-    elif not a is not SomeEnum.VALUE2:
-        pass
-    else:
+    if a is not SomeEnum.VALUE1 and a is not SomeEnum.VALUE2:
         assert_never(a)
 
 
 def func4(a: SomeEnum):
-    if not a is not SomeEnum.VALUE1:
-        pass
-    else:
+    if a is not SomeEnum.VALUE1:
         # This should generate an error because
         # a hasn't been narrowed to Never.
         assert_never(a)
 
 
 def func5(a: Union[str, Literal[False]]) -> str:
-    if a is False:
-        return "no"
-    return a
+    return "no" if a is False else a
 
 
 def func6(a: Union[str, Literal[False]]) -> str:
-    if a is not False:
-        return a
-    return "no"
+    return a if a is not False else "no"
 
 
 def func7(a: Union[str, bool]) -> str:

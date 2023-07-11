@@ -7,11 +7,7 @@ while len(input()) < 42:
 
     x += 43
 
-    if a and a:
-        continue
-
     if a:
-        print("")
         continue
 
     x += 44

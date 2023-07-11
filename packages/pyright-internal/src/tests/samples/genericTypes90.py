@@ -8,5 +8,4 @@ _T = TypeVar("_T")
 
 
 def func(x: list[_T]) -> list[_T]:
-    result = func(x)
-    return result
+    return func(x)

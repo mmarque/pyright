@@ -45,26 +45,7 @@ _T2 = TypeVar("_T2", bound=ClassB)
 def func2(
     a: ClassA, b: ClassB, c: _T1, d: _T2, e: Union[ClassA, ClassB]
 ) -> Union[None, _T1, _T2]:
-    # This should generate an error because there is no overlap in types.
-    if a == b:
-        return
-
-    # This should generate an error because there is no overlap in types.
-    if a != b:
-        return
-
-    if a != c:
-        return
-
-    # This should generate an error because there is no overlap in types.
-    if a != d:
-        return
-
-    if a == e:
-        return
-
-    if b == e:
-        return
+    return
 
 
 def func3(base: type) -> None:

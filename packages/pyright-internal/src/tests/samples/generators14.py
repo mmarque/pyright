@@ -12,7 +12,7 @@ async def main() -> None:
     v2 = (x for x in [2, 3] if await foo())
     reveal_type(v2, expected_text="AsyncGenerator[int, None]")
 
-    v3 = (x for x in [2, 3])
+    v3 = iter([2, 3])
     reveal_type(v3, expected_text="Generator[int, None, None]")
 
     v4 = (await foo() for _ in [2, 3])

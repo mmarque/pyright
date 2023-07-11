@@ -12,16 +12,14 @@ class SomeEnum(Enum):
 
 
 def func1(a: SomeEnum) -> Literal[3]:
-    if a == SomeEnum.SOME_ENUM_VALUE1 or a == SomeEnum.SOME_ENUM_VALUE2:
+    if a in [SomeEnum.SOME_ENUM_VALUE1, SomeEnum.SOME_ENUM_VALUE2]:
         return 3
     else:
         return a.value
 
 
 def func2(a: SomeEnum) -> Literal[3]:
-    if a == SomeEnum.SOME_ENUM_VALUE1:
-        return 3
-    elif a == SomeEnum.SOME_ENUM_VALUE2:
+    if a in [SomeEnum.SOME_ENUM_VALUE1, SomeEnum.SOME_ENUM_VALUE2]:
         return 3
     else:
         return a.value
@@ -36,7 +34,7 @@ def must_be_false(a: Literal[False]):
 
 
 def func3(a: bool):
-    if a == True:
+    if a:
         must_be_true(a)
     else:
         must_be_false(a)

@@ -8,11 +8,7 @@ class Foo:
 
     def do_stuff(self, x: int | None):
         while True:
-            if x is not None:
-                a = x
-            else:
-                a = self.non_property
-
+            a = x if x is not None else self.non_property
             # This should generate an error because the type of "a"
             # is not compatible with a "-" operator.
             _ = a - 0

@@ -7,7 +7,7 @@ from typing import Callable, Generic, Mapping, Optional, TypeVar
 c1 = Counter({0, 1})
 reveal_type(c1, expected_text="Counter[int]")
 
-for i in range(256):
+for _ in range(256):
     c1 = Counter({0: c1[1]})
     reveal_type(c1, expected_text="Counter[int]")
 

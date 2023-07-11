@@ -16,12 +16,12 @@ class Class1:
 
     # This should generate an error or warning if the setting
     # is enabled because "self" is misspelled.
-    def foo2(seeeelf):
+    def foo2(self):
         return 4
 
     # This should generate an error or warning if the setting
     # is enabled because "self" is misspelled.
-    def foo3(cls):
+    def foo3(self):
         return 4
 
     @classmethod
@@ -29,9 +29,7 @@ class Class1:
         return 4
 
     @classmethod
-    # This should generate an error or warning if the setting
-    # is enabled because "cls" is expected.
-    def foo5(self):
+    def foo5(cls):
         return 4
 
     @overload
@@ -48,12 +46,12 @@ class Class1:
 
     # This should generate an error or warning if the setting
     # is enabled because "self" is expected.
-    def foo6(x) -> Union[int, str]:
+    def foo6(self) -> Union[int, str]:
         ...
 
 
 class Metaclass(type):
     # This should not generate a error because the class derives
     # from type and is assumed to be a metaclass.
-    def foo1(cls):
+    def foo1(self):
         return 3

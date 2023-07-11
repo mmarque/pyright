@@ -19,10 +19,7 @@ class MyClass(metaclass=abc.ABCMeta):
 
     def __getattr__(self, attr):
         cache = self.cache
-        if attr in cache:
-            return cache[attr]
-        else:
-            return self.__getattribute__(attr)
+        return cache[attr] if attr in cache else self.__getattribute__(attr)
 
 
 my_class = MyClass("test")

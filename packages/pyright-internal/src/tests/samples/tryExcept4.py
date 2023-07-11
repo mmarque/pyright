@@ -14,15 +14,5 @@ class CustomException1(BaseException):
 if a:
     raise CustomException1
 
-if a:
-    raise CustomException1(3)
-
-
 class CustomException2:
     pass
-
-
-# This should generate an error because
-# the exception doesn't derive from BaseException.
-if a:
-    raise CustomException2

@@ -5,6 +5,4 @@ import re
 
 
 def foo(s: str) -> str:
-    if m := re.fullmatch("(test).+", s):
-        return m.group(1)
-    return "oops"
+    return m[1] if (m := re.fullmatch("(test).+", s)) else "oops"

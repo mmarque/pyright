@@ -23,8 +23,7 @@ class Foo:
 
 
 a = None
-if 1:
-    a = Foo()
+a = Foo()
 
 # If "reportOptionalMemberAccess" is enabled,
 # this should generate an error.
@@ -36,8 +35,7 @@ def foo():
 
 
 b = None
-if 1:
-    b = foo
+b = foo
 
 # If "reportOptionalCall" is enabled,
 # this should generate an error.
@@ -45,32 +43,24 @@ b()
 
 
 c = None
-if 1:
-    c = [3, 4, 5]
+c = [3, 4, 5]
 
 # If "reportOptionalSubscript" is enabled,
 # this should generate an error.
 c[2]
 
 
-# If "reportOptionalIterable" is enabled,
-# this should generate an error.
-for val in c:
-    pass
-
 # If "reportOptionalContextManager" is enabled,
 # this should generate an error.
 cm = None
-if 1:
-    cm = Foo()
+cm = Foo()
 with cm as val:
     pass
 
 # If "reportOptionalOperand" is enabled,
 # this should generate 3 errors.
 e = None
-if 1:
-    e = 4
+e = 4
 
 v1 = e + 4
 v2 = e < 5

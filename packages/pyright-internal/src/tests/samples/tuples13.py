@@ -19,7 +19,7 @@ def func1(val1: Tuple[int, str, None], val2: Tuple[int, ...]):
     x5 = val1[:-2]
     reveal_type(x5, expected_text="tuple[int]")
 
-    x6 = val1[0:100]
+    x6 = val1[:100]
     reveal_type(x6, expected_text="tuple[int | str | None, ...]")
 
     x7 = val2[:2]

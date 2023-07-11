@@ -2,8 +2,8 @@
 
 count = 0
 
-for x in range(1):
-    for y in range(1):
+for _ in range(1):
+    for _ in range(1):
         count += 1
 
 reveal_type(count, expected_text='int')

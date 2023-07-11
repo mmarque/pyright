@@ -11,9 +11,7 @@ bar = 3
 __all__: Any
 
 __all__ = ("test", "hello")
-__all__ = ["test", "hello"]
-__all__.append("foo")
-__all__.extend(["foo"])
+__all__ = ["test", "hello", "foo", "foo"]
 __all__.remove("foo")
 __all__ += ["bar"]
 

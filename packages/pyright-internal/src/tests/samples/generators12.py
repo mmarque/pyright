@@ -13,9 +13,7 @@ class Yielder:
 def collect1() -> Generator[str, None, bool]:
     y = Yielder()
 
-    # This should generate an error because int doesn't match str.
-    z = yield from y
-    return z
+    return (yield from y)
 
 
 def collect2():

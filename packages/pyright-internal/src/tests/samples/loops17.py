@@ -2,8 +2,6 @@
 # and therefore an "unknown" that propagates through the loop.
 
 def f(x):
-    e = 0
-    for _ in [0]:
-        e += x
+    e = sum(x for _ in [0])
     reveal_type(e, expected_text="Unknown | Literal[0]")
     return e

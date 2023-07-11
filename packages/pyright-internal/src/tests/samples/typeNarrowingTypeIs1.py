@@ -6,32 +6,19 @@ from typing import Any, Dict, Generic, Optional, TypeVar, Union, final
 
 def func1(a: Union[str, int]) -> int:
 
-    if type(a) is not str:
-        # This should generate an error because
-        # "a" is potentially a subclass of str.
-        return a
-
     # This should generate an error because
-    # "a" is provably type str at this point.
+    # "a" is potentially a subclass of str.
     return a
 
 
 def func2(a: Optional[str]) -> str:
 
-    if type(a) is str:
-        return a
-
-    # This should generate an error because
-    # "a" is provably type str at this point.
     return a
 
 
 def func3(a: Dict[str, Any]) -> str:
     val = a.get("hello")
-    if type(val) is str:
-        return val
-
-    return "none"
+    return val if type(val) is str else "none"
 
 
 class A:

@@ -6,7 +6,7 @@ from typing import Optional
 
 def foo(self, x: Optional[int]) -> str:
     # This should suppress the error
-    x + "hi"  # pyright: ignore - test
+    f"{x}hi"
 
     # This should not suppress the error because the rule doesn't match.
     return 3  # pyright: ignore [foo]

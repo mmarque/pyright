@@ -14,14 +14,10 @@ def func1(x: Optional[int]):
     if x != None:
         x.bit_length()
 
-    if x is None:
-        pass
-    else:
+    if x is not None:
         x.bit_length()
 
-    if x == None:
-        pass
-    else:
+    if x != None:
         x.bit_length()
 
 
@@ -31,10 +27,10 @@ _T1 = TypeVar("_T1", None, str)
 def func2(val: _T1) -> _T1:
     if val is not None:
         reveal_type(val, expected_text="str*")
-        return val
     else:
         reveal_type(val, expected_text="None*")
-        return val
+
+    return val
 
 
 def func3(x: object):

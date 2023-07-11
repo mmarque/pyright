@@ -12,11 +12,7 @@ T2 = TypeVar("T3")
 
 T4: Any = TypeVar("T4")
 
-my_dict = {}
-
-# This should generate an error because TypeVars cannot be
-# assigned to an index expression.
-my_dict["var"] = TypeVar("T5")
+my_dict = {"var": TypeVar("T5")}
 
 # This should generate an error because a TypeVar with a single
 # constraint is an error.

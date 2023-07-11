@@ -6,11 +6,11 @@ from typing import Self
 
 
 class ClassA(type):
-    def __enter__(cls) -> Self:
+    def __enter__(self) -> Self:
         print("Enter A")
-        return cls
+        return self
     
-    def __exit__(cls, exc_typ: type[Exception], exc_val: Exception, exc_tbc: TracebackType) -> None:
+    def __exit__(self, exc_typ: type[Exception], exc_val: Exception, exc_tbc: TracebackType) -> None:
         print("Exit A")
 
 class ClassB(metaclass=ClassA):

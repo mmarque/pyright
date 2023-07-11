@@ -21,5 +21,4 @@ def foo(v: A, s: Dict[B, A]) -> object:
     while isinstance(u, B):
         v = u
         u = s.get(v)
-    x = v if u is None else u
-    return x
+    return v if u is None else u

@@ -39,9 +39,7 @@ _T1 = TypeVar("_T1")
 
 
 def test1(arg: Union[_T1, Callable[[], _T1]]) -> _T1:
-    if callable(arg):
-        return arg()
-    return arg
+    return arg() if callable(arg) else arg
 
 
 class Foo:

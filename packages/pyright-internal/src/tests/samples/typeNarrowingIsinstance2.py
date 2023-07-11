@@ -4,9 +4,7 @@
 
 class Base:
     def get_value(self) -> int:
-        if isinstance(self, Derived):
-            return self.calculate()
-        return 7
+        return self.calculate() if isinstance(self, Derived) else 7
 
 
 class Derived(Base):

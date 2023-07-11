@@ -10,7 +10,4 @@ def func1(nums: list[int], target: int) -> None:
         mid = var
         if nums[mid] == target:
             return
-        if var:
-            var = mid
-        else:
-            var = mid
+        var = mid

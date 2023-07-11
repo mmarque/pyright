@@ -13,8 +13,7 @@ class C:
 
 
 def good(b: Optional[C]) -> None:
-    a = b
-    if a:
+    if a := b:
         a.foo()
 
 

@@ -5,10 +5,7 @@ from typing import Callable, Generic, TypeVar, Union
 
 
 def foo2(a: int | str):
-    if isinstance(a, int):
-        return 1
-    else:
-        return 2
+    return 1 if isinstance(a, int) else 2
 
 
 B = bytes | None | Callable[[], None]

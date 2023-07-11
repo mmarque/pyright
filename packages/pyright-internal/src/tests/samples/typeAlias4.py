@@ -45,7 +45,7 @@ my_type5: TA = True
 
 # This should generate an error because the expression
 # on the RHS evaluates to an object, not a class.
-my_type7: TA = list()
+my_type7: TA = []
 
 # Verify that variables with declarations (other than explicit TypeAlias)
 # are not treated as a type alias.

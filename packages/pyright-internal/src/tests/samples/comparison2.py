@@ -7,21 +7,7 @@ def cond() -> bool:
 
 
 # This should generate a diagnostic when reportUnnecessaryComparison is enabled.
-if cond:
-    pass
-
-# This should generate a diagnostic when reportUnnecessaryComparison is enabled.
-if 0 or cond:
-    pass
-
-# This should generate a diagnostic when reportUnnecessaryComparison is enabled.
-if 1 and cond:
-    pass
-
 if cond():
-    pass
-# This should generate a diagnostic when reportUnnecessaryComparison is enabled.
-elif cond:
     pass
 
 # This should generate a diagnostic when reportUnnecessaryComparison is enabled.

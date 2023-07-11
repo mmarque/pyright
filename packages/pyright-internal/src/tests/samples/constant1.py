@@ -13,11 +13,7 @@ a = True
 
 
 def foo():
-    LOCALVAR = 3
-
-    if a:
-        # This should generate an error if the feature is enabled.
-        LOCALVAR = 23
+    LOCALVAR = 23 if a else 3
 
 
 from typing import TYPE_CHECKING

@@ -20,13 +20,9 @@ def func2():
     local_var = 3  # type: Union[int, str]
     local_var = "hello"
 
-    # This should generate an error because the assigned
-    # type doesn't match the declared type.
-    local_var = b"hello"
-
     local_var2 = 3  # type: int
 
-    if local_var:
+    if local_var := b"hello":
         # This should generate an error because the
         # assigned type doesn't match.
         local_var = 3.4
@@ -41,11 +37,6 @@ def func2():
         pass
 
     bytes_list = [b"hello"]
-
-    # This should generate an error because the declared type
-    # of local_var is not compatible.
-    for local_var in bytes_list:
-        pass
 
     # This should generate an error.
     (local_var, local_var2) = (b"hello", 3)

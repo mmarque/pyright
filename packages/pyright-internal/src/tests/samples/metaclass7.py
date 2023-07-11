@@ -4,8 +4,8 @@
 
 
 class FactoryMetaClass1(type):
-    def __call__(cls, **kwargs):
-        return cls()
+    def __call__(self, **kwargs):
+        return self()
 
 
 class BaseFactory1:

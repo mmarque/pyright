@@ -25,8 +25,7 @@ class SourceProvider(Generic[_TBase1]):
 
 class ManagedSourceProvider(SourceProvider[_TBase2]):
     def get(self) -> Optional[_TBase2]:
-        source = my_next(self)
-        return source
+        return my_next(self)
 
     def __next__(self) -> _TBase2:
         raise NotImplementedError

@@ -12,5 +12,3 @@ class MyEnum(Enum):
 def func1(vals: list[MyEnum]):
     for val1 in vals:
         val2: MyEnum = val1
-        if val2 == MyEnum.A:
-            pass

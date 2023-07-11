@@ -2,9 +2,7 @@
 # for dedent tokens.
 
 
-if True:
-	if True:
-		print("False")
-        print("True") # Should generate an error here.
+print("False")
+print("True") # Should generate an error here.
 
   

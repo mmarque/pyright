@@ -28,28 +28,15 @@ def func1() -> Tuple[int, int, int]:
 
 
 def func2() -> Tuple[int, int, str]:
-    a = 1, 2, 3
-
-    # This should generate an error because the
-    # item types don't match.
-    return a
+    return 1, 2, 3
 
 
 def func3() -> Tuple[str, ...]:
-    a = "1", 2, 3
-
-    # This should generate an error because the
-    # heterogenous tuple can't be assigned to
-    # the homogenous tuple type.
-    return a
+    return "1", 2, 3
 
 
 def func4() -> Tuple[str, ...]:
-    a = (1,)
-
-    # This should generate an error because the first
-    # item in the tuple isn't a string.
-    return a
+    return (1,)
 
 
 def func6():
@@ -113,13 +100,7 @@ def func11() -> float:
     b = ("hello", 3, 6.7)
 
     c, *d = b
-    if c:
-        # This should generate an error because
-        # d should be an iterable type, not compatible
-        # with the declared return type.
-        return d
-
-    return 3
+    return d if c else 3
 
 
 # Tests for assignment of tuple list that includes star

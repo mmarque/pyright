@@ -24,7 +24,4 @@ def func1(x: bool, a: T, b: S) -> Union[T, S]:
     # This should generate an error
     b.__name__
 
-    if x:
-        return a
-    else:
-        return b
+    return a if x else b

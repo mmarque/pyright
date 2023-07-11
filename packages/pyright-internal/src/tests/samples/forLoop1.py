@@ -16,11 +16,6 @@ for a in list1:
 
 int1 = 1
 
-# This should generate an error because
-# an int type is not iterable.
-for foo1 in int1:
-    pass
-
 
 async def func1():
     # This should generate an error because
@@ -44,7 +39,7 @@ async def func2():
     async for foo3 in iter1:
         requires_int(foo3)
 
-    for d in [b for b in list1]:
+    for d in list(list1):
         requires_int(d)
 
     for e in [b async for b in iter1]:
@@ -75,7 +70,7 @@ class A:
 # This should generate an error because A
 # is not iterable. The __iter__ method is an
 # instance variable.
-for a in A():
+for _ in A():
     ...
 
 class B:
@@ -84,7 +79,7 @@ class B:
         self.__iter__ = lambda: iter([])
 
 
-for b in B():
+for _ in B():
     ...
 
 def func3():

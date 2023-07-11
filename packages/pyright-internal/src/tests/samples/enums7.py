@@ -14,10 +14,7 @@ class Color(Enum):
     blue = "blue"
 
     def __init__(self, value: str):
-        if value == "blue":
-            self.foo = False
-        else:
-            self.foo = True
+        self.foo = value != "blue"
 
 
 class NonEnum:

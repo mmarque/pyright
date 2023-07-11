@@ -8,9 +8,11 @@ d = 0
 
 
 def func_a() -> None:
-    a = "a"
+
 
     class A:
+        a = "a"
+
         reveal_type(a, expected_text="Literal['a']")
 
 

@@ -15,9 +15,7 @@ class MyDescriptor:
         ...
 
     def __get__(self, __obj: object | None, __owner: Any) -> "int | MyDescriptor":
-        if __obj is None:
-            return self
-        return cast(Any, __obj)._x
+        return self if __obj is None else cast(Any, __obj)._x
 
     def __set__(self, __obj: object, __value: int) -> None:
         if __obj is not None:

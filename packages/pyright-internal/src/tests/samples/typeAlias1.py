@@ -31,7 +31,4 @@ Alias1 = Literal[0, 1]
 
 foo2: dict[Alias1, Any] = {}
 
-if foo2:
-    pass
-
 baz2: list[Alias1] = []

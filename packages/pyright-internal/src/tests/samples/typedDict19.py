@@ -32,11 +32,7 @@ def func3(td: TD1 | TD2, opt: bool):
 
 
 def func4(td: TD1 | TD2, opt: bool):
-    if opt:
-        td["x"] = "hi"
-    else:
-        td["x"] = "hi"
-
+    td["x"] = "hi"
     v1 = td["x"]
 
 

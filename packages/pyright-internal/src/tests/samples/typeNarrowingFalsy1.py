@@ -44,10 +44,7 @@ def func3(maybe_a: Optional[A]):
 
 
 def func4(foo: Iterable[int]) -> None:
-    if foo:
-        reveal_type(foo, expected_text="Iterable[int]")
-    else:
-        reveal_type(foo, expected_text="Iterable[int]")
+    reveal_type(foo, expected_text="Iterable[int]")
 
 
 def func5(foo: tuple[int]) -> None:
@@ -58,10 +55,7 @@ def func5(foo: tuple[int]) -> None:
 
 
 def func6(foo: tuple[int, ...]) -> None:
-    if foo:
-        reveal_type(foo, expected_text="tuple[int, ...]")
-    else:
-        reveal_type(foo, expected_text="tuple[int, ...]")
+    reveal_type(foo, expected_text="tuple[int, ...]")
 
 
 def func7(foo: tuple[()]) -> None:

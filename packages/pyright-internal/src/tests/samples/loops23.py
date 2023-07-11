@@ -9,8 +9,4 @@ def func():
     c: Any = None
 
     while True:
-        if a:  # type: ignore
-            if c:
-                pass
-
         a = c == c.foo

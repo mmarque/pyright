@@ -41,7 +41,7 @@ def func3(a: LiteralString):
     func2(a)
     a.lower()
 
-    _ = a + "hi" + a.capitalize()
+    _ = f"{a}hi{a.capitalize()}"
 
 
 def func4(a: LiteralString, parts: Iterable[LiteralString]):
@@ -59,7 +59,7 @@ def func5(
 
     v2: LiteralString = f"{a}" f"{a}"
 
-    v3: LiteralString = f"{'xxx'}" f"{'xxx'}"
+    v3: LiteralString = 'xxxxxx'
 
     # This should generate an error because "b" is not literal.
     v4: LiteralString = f"{a} {b}"

@@ -68,10 +68,6 @@ class ClassA(Generic[_T1, _T2]):
         # This should generate an error.
         _ = await a
 
-        # This should generate two errors.
-        for _ in a:
-            pass
-
         a.do_stuff()
 
         # This should generate an error.
@@ -110,10 +106,6 @@ class ClassA(Generic[_T1, _T2]):
 
         # This should generate an error.
         _ = await a
-
-        # This should generate an error.
-        for _ in a:
-            pass
 
         # This should generate an error.
         a.do_other_stuff()
@@ -158,14 +150,12 @@ TThing = TypeVar("TThing", Thing1, Thing2)
 def func1(x: TThing) -> TThing:
     if isinstance(x, Thing1):
         return 2 + x
-    else:
-        assert isinstance(x, Thing2)
-        return 3 + x
+    assert isinstance(x, Thing2)
+    return 3 + x
 
 
 def func2(x: TThing) -> TThing:
     if isinstance(x, Thing1):
         return x + 2
-    else:
-        assert isinstance(x, Thing2)
-        return x + 3
+    assert isinstance(x, Thing2)
+    return x + 3

@@ -15,10 +15,7 @@ async def func(x: str) -> str:
 
 
 async def func(x) -> Union[int, str]:
-    if isinstance(x, int):
-        return 32
-    else:
-        return "that"
+    return 32 if isinstance(x, int) else "that"
 
 
 def requires_str(a: str):

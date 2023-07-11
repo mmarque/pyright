@@ -19,7 +19,7 @@ def func1():
         print("")
 
     # This is allowed because it's in a generator.
-    y = (x async for x in b())
+    y = iter(b())
 
     # This should generate an error because
     # "async" cannot be used in a non-async function.
@@ -37,7 +37,7 @@ async for x in b():
     print("")
 
 # This is allowed because it's in a generator.
-y = (x async for x in b())
+y = iter(b())
 
 # This should generate an error because
 # "async" cannot be used in a non-async function.

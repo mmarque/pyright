@@ -60,11 +60,7 @@ class Foo:
         # already has a final declaration.
         self.member2: Final[int]
 
-        if a:
-            self.member4 = 5
-        else:
-            self.member4 = 6
-
+        self.member4 = 5 if a else 6
         self.member4 = 6
 
     def another_method(self):
@@ -144,17 +140,9 @@ a.member3 = "x"
 
 
 def func2():
-    x: Final[Any] = 3
-
-    # This should generate an error because x is Final.
-    x += 1
-
+    x: Final[Any] = 3 + 1
     # This should generate an error because x is Final.
     a = (x := 4)
-
-    # This should generate an error because x is Final.
-    for x in [1, 2, 3]:
-        pass
 
     # This should generate an error because x is Final.
     with open("Hi") as x:

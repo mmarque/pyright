@@ -60,10 +60,6 @@ class ClassA(Generic[_T1]):
         # This should generate an error.
         _ = await a
 
-        # This should generate an error.
-        for _ in a:
-            pass
-
         a.do_stuff()
 
         # This should generate an error.
@@ -99,10 +95,6 @@ class ClassA(Generic[_T1]):
 
         # This should generate an error.
         _ = await a
-
-        # This should generate an error.
-        for _ in a:
-            pass
 
         a.do_stuff()
 

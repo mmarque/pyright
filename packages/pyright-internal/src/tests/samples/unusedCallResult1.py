@@ -20,9 +20,7 @@ def func4():
 
 
 def func5(a: int) -> Union[int, List[int]]:
-    if a < 0:
-        return 5
-    return [3]
+    return 5 if a < 0 else [3]
 
 
 def func6() -> Iterable[int]:

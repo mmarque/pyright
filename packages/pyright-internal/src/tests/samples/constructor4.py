@@ -8,7 +8,7 @@ from typing import DefaultDict, List, Type, TypeVar
 val1 = Queue()
 reveal_type(val1, expected_text="Queue[Unknown]")
 
-val2 = list()
+val2 = []
 reveal_type(val2, expected_text="list[Unknown]")
 
 _T = TypeVar("_T")

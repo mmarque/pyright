@@ -5,7 +5,7 @@
 
 var = 0
 while True:
-    if var and True:
+    if var:
         break
     else:
         var, _ = var + 1, 0

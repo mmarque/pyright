@@ -14,9 +14,7 @@ class Obj:
         ...
 
     def __getattr__(self, name: str) -> Any:
-        if name == "foo":
-            return 1
-        return "1"
+        return 1 if name == "foo" else "1"
 
 
 obj = Obj()

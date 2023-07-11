@@ -13,9 +13,4 @@ def func1(a: int):
 
     __z__ = 5
 
-    if x + 1:
-        # This should generate an error if reportUnusedVariable is enabled.
-        z = 3
-    else:
-        # This should generate an error if reportUnusedVariable is enabled.
-        z = 5
+    z = 3 if x + 1 else 5

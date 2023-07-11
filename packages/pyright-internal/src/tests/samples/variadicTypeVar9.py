@@ -30,9 +30,7 @@ def tail_rec(
 
 @tail_rec
 def factorial(n: int, acc: int) -> TailRec[int, int, int]:
-    if n <= 0:
-        return Return(acc)
-    return Call(n - 1, acc * n)
+    return Return(acc) if n <= 0 else Call(n - 1, acc * n)
 
 
 reveal_type(factorial, expected_text="(int, int) -> int")

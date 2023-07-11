@@ -100,7 +100,7 @@ def s10(p: List[str]):
     reveal_type(a, expected_text="List[Any]")
     b: Iterable[str] = []
     reveal_type(b, expected_text="list[str]")
-    c: Iterable[str] = list()
+    c: Iterable[str] = []
     reveal_type(c, expected_text="list[str]")
 
 

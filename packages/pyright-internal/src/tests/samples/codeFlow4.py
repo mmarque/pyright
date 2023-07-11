@@ -16,11 +16,7 @@ def func1(x: Union[int, str]):
 
 
 def func2(x: Literal[1, 2, 3, 4]):
-    if x == 1 or x == 2:
-        y = 0
-    elif x == 3 or not x == 3:
-        y = 1
-
+    y = 0 if x in [1, 2] else 1
     print(y)
 
 
@@ -44,40 +40,37 @@ def func4(x: Color):
     if x == Color.RED:
         return
 
-    if x == Color.GREEN or (Color.PERIWINKLE == x and True):
+    if x == Color.GREEN or Color.PERIWINKLE == x:
         y = 2
-    else:
-        if Color.BLUE == x:
-            y = 3
+    elif Color.BLUE == x:
+        y = 3
 
     print(y)
 
 
 def func5():
-    if True:
-        y = 2
+    y = 2
 
     print(y)
 
 
 def func6():
-    if not None:
-        y = 2
+    y = 2
 
     print(y)
 
 
 def func7(color: Color) -> str:
-    if color == Color.RED or color == Color.BLUE:
+    if color in [Color.RED, Color.BLUE]:
         return "yes"
-    elif color == Color.GREEN or color == Color.PERIWINKLE:
+    elif color in [Color.GREEN, Color.PERIWINKLE]:
         return "no"
 
 
 def func8(color: Color) -> bool:
-    if color == Color.RED or color == Color.BLUE:
+    if color in [Color.RED, Color.BLUE]:
         return True
-    elif color == Color.GREEN or color == Color.PERIWINKLE:
+    elif color in [Color.GREEN, Color.PERIWINKLE]:
         return False
 
 
@@ -88,9 +81,7 @@ def func9(a: Union[str, int], b: Union[str, int]) -> bool:
     if isinstance(a, str):
         return True
     elif isinstance(a, int):
-        if isinstance(b, str):
-            return False
-        elif isinstance(b, int):
+        if isinstance(b, (str, int)):
             return False
 
 
@@ -118,7 +109,7 @@ class B(A):
 
 
 def func11(val: A | B):
-    if not (isinstance(val, A) or isinstance(val, B)):
+    if not (isinstance(val, (A, B))):
         raise Exception
 
 
@@ -126,7 +117,7 @@ reveal_type(func11(A()), expected_text="None")
 
 
 def func12(val: A | B):
-    if isinstance(val, A) or isinstance(val, B):
+    if isinstance(val, (A, B)):
         raise Exception
 
 

@@ -19,9 +19,7 @@ class MetaClass(type):
     def __get__(
         self: Type[T], instance: Optional[object], owner: Any
     ) -> Union[Type[T], T]:
-        if instance is None:
-            return self
-        return self()
+        return self if instance is None else self()
 
 
 class A(metaclass=MetaClass):

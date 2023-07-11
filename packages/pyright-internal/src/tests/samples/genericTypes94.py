@@ -48,11 +48,8 @@ class ClassC(Generic[T, S]):
     value: DC1[T] | DC2[S]
 
     def method1(self, val: U) -> "ClassC[U, S]":
-        if isinstance(self.value, DC1):
-            # This should generate an error.
-            return ClassC(self.value)
-        else:
-            return ClassC(self.value)
+        # This should generate an error.
+        return ClassC(self.value)
 
 
 T_co = TypeVar("T_co", covariant=True)

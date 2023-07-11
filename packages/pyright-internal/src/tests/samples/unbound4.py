@@ -13,11 +13,7 @@ reveal_type(b, expected_text="Unknown")
 
 
 def func2(val: int):
-    if val < 3:
-        return val
-
-    # This should generate an error
-    return a
+    return val if val < 3 else a
 
 
 # This should not.

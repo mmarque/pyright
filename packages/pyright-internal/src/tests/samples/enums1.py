@@ -40,7 +40,7 @@ z = TestEnum3.Z
 list1 = list(TestEnum3)
 reveal_type(list1, expected_text="list[TestEnum3]")
 
-list2 = [i for i in TestEnum3]
+list2 = list(TestEnum3)
 reveal_type(list2, expected_text="list[TestEnum3]")
 
 num_items_in_enum3 = len(TestEnum3)

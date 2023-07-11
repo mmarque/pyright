@@ -10,7 +10,7 @@ class ProtoA(Protocol):
 
 
 class ProtoB(Protocol):
-    def meth(_self, self: Any, x: int) -> int:
+    def meth(self, self: Any, x: int) -> int:
         ...
 
 

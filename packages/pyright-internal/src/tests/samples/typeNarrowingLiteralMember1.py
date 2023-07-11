@@ -37,10 +37,7 @@ def eq_obj1(c: Union[A, B]):
 
 
 def is_obj1_1(c: Union[A, B]):
-    if c.kind is "A":
-        reveal_type(c, expected_text="A | B")
-    else:
-        reveal_type(c, expected_text="A | B")
+    reveal_type(c, expected_text="A | B")
 
 
 def is_obj1_2(c: Union[A, B]):
@@ -58,10 +55,7 @@ def eq_obj2(c: Union[A, B]):
 
 
 def is_obj2(c: Union[A, B]):
-    if c.kind is not "A":
-        reveal_type(c, expected_text="A | B")
-    else:
-        reveal_type(c, expected_text="A | B")
+    reveal_type(c, expected_text="A | B")
 
 
 def eq_obj3(c: Union[A, B, C]):
@@ -72,10 +66,7 @@ def eq_obj3(c: Union[A, B, C]):
 
 
 def is_obj3(c: Union[A, B, C]):
-    if c.kind is "A":
-        reveal_type(c, expected_text="A | B | C")
-    else:
-        reveal_type(c, expected_text="A | B | C")
+    reveal_type(c, expected_text="A | B | C")
 
 
 def eq_obj4(c: Union[A, B]):
@@ -86,23 +77,17 @@ def eq_obj4(c: Union[A, B]):
 
 
 def is_obj4(c: Union[A, B]):
-    if c.d is 1:
-        reveal_type(c, expected_text="A | B")
-    elif c.d is 3:
+    if c.d is 1 or c.d is 3:
         reveal_type(c, expected_text="A | B")
 
 
 def eq_obj5(d: D):
-    if d.kind == 1:
-        reveal_type(d, expected_text="D")
-    elif d.kind == 2:
+    if d.kind in [1, 2]:
         reveal_type(d, expected_text="D")
 
 
 def is_obj5(d: D):
-    if d.kind is 1:
-        reveal_type(d, expected_text="D")
-    elif d.kind is 2:
+    if d.kind is 1 or d.kind is 2:
         reveal_type(d, expected_text="D")
 
 
@@ -114,10 +99,7 @@ def eq_class2(c: Union[Type[A], Type[B]]):
 
 
 def is_class2(c: Union[Type[A], Type[B]]):
-    if c.kind_class is "A":
-        reveal_type(c, expected_text="Type[A] | Type[B]")
-    else:
-        reveal_type(c, expected_text="Type[A] | Type[B]")
+    reveal_type(c, expected_text="Type[A] | Type[B]")
 
 
 class E:

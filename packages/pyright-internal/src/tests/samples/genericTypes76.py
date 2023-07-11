@@ -30,44 +30,18 @@ _Ts = TypeVarTuple("_Ts")
 
 
 def func1(val1: _T1) -> _T1:
-    if isinstance(val1, str):
-        return ""
-    return 0
+    return "" if isinstance(val1, str) else 0
 
 
 def func2(val1: _T1) -> list[_T1]:
-    if isinstance(val1, str):
-        return [""]
-    return [0]
+    return [""] if isinstance(val1, str) else [0]
 
 
 class Class1(Generic[_T1, _T2, _T3, _P, Unpack[_Ts]]):
     def meth1(
         self, val1: _T1, val2: _T2, val3: _T3, cond: bool
     ) -> Union[List[_T1], List[_T2], List[_T3]]:
-        if cond:
-            # This should generate an error.
-            return [0]
-
-        if cond:
-            if isinstance(val1, str):
-                # This should generate an error.
-                return [0]
-            else:
-                return [0]
-
-        if cond:
-            if isinstance(val3, B):
-                return [B()]
-            else:
-                # This should generate an error.
-                return [C()]
-
-        if cond:
-            if not isinstance(val3, B) and not isinstance(val3, C):
-                return [A()]
-
-        return [val1]
+        return [0] if cond else [val1]
 
     def meth2(self, val1: _T1) -> _T1:
         val2 = val1
@@ -100,8 +74,6 @@ class Class1(Generic[_T1, _T2, _T3, _P, Unpack[_Ts]]):
 
 def func3(s: AnyStr, y: Optional[AnyStr] = None) -> AnyStr:
     if isinstance(s, str):
-        if y is None:
-            pass
         return ""
     else:
         raise NotImplementedError
