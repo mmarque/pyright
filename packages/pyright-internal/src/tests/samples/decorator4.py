@@ -13,9 +13,7 @@ class Class2:
 def my_decorator(fn):
     # This decorator returns a value that is
     # inferred to be a union containing an Unknown type.
-    if fn:
-        return my_module.unknown
-    return Class2
+    return my_module.unknown if fn else Class2
 
 
 @my_decorator

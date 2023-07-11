@@ -1,8 +1,8 @@
 # This sample tests a series of nested loops containing variables
 # with significant dependencies.
 
+cnt1 = 4
 for val1 in range(10):
-    cnt1 = 4
     for val2 in range(10 - val1):
         cnt2 = 4
         if val2 == val1:

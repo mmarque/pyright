@@ -18,10 +18,10 @@ class C:
 
 
 def func1(val: A):
-    if isinstance(val, B):
-        val.a_val
-        val.b_val
+    val.a_val
+    val.b_val
 
+    if isinstance(val, B):
         # This should generate an error
         val.c_val
 
@@ -34,19 +34,14 @@ def func1(val: A):
             reveal_type(val, expected_text="<subclass of <subclass of A and B> and C>")
 
     else:
-        val.a_val
-
-        # This should generate an error
-        val.b_val
-
         reveal_type(val, expected_text="A")
 
 
 def func2(val: Type[A]):
-    if issubclass(val, B):
-        val.a_val
-        val.b_val
+    val.a_val
+    val.b_val
 
+    if issubclass(val, B):
         # This should generate an error
         val.c_val
 
@@ -61,11 +56,6 @@ def func2(val: Type[A]):
             )
 
     else:
-        val.a_val
-
-        # This should generate an error
-        val.b_val
-
         reveal_type(val, expected_text="Type[A]")
 
 
@@ -73,6 +63,4 @@ _T1 = TypeVar("_T1", bound=A)
 
 
 def func3(val: _T1) -> _T1:
-    if isinstance(val, B):
-        return val
     return val

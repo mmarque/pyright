@@ -98,10 +98,7 @@ def func5(x: str | None, y: int | None, z: dict[str, str]):
 
 
 def func6(x: type):
-    if x in (str, int, float, bool):
-        reveal_type(x, expected_text="type")
-    else:
-        reveal_type(x, expected_text="type")
+    reveal_type(x, expected_text="type")
 
 
 def func7(x: object | bytes, y: str, z: int):

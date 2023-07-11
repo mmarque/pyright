@@ -8,10 +8,10 @@ from typing import List, Literal, Tuple
 a1 = (1, 2)
 reveal_type(a1, expected_text="tuple[Literal[1], Literal[2]]")
 
-a2 = list((1, 2))
+a2 = [1, 2]
 reveal_type(a2, expected_text="list[Literal[1, 2]]")
 
-a3: List[Literal[1]] = list((1,))
+a3: List[Literal[1]] = [1]
 reveal_type(a3, expected_text="list[Literal[1]]")
 
 

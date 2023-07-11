@@ -16,7 +16,7 @@ foo = (x for x, y in ([1, 2, 3, pairs2 := pairs]) if x % 2 == 0)
 
 # This should generate an error because 'j' is used as a
 # "for target" and the target of an assignment expression.
-[[(j := j) for i in range(5)] for j in range(5)]
+[[j := j for _ in range(5)] for j in range(5)]
 [i := 0 for i, j in stuff]
 [i + 1 for i in (i := stuff)]
 
@@ -28,7 +28,7 @@ foo = (x for x, y in ([1, 2, 3, pairs2 := pairs]) if x % 2 == 0)
 # in a "for" clause of a list comprehension.
 [i + 1 for i in (j := stuff)]
 [i + 1 for i in range(2) for j in (k := stuff)]
-[i + 1 for i in [j for j in (k := stuff)]]
+[i + 1 for i in list(k := stuff)]
 [i + 1 for i in (lambda: (j := stuff))()]
 
 

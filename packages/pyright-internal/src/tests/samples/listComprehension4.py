@@ -7,7 +7,7 @@ a: str = "hello"
 # error because "a" is not yet bound to the local
 # variable at the time it is executed. Instead, it
 # has the str type of the "a" in the outer scope.
-b = [a for a in [len(a)]]
+b = [len(a)]
 
 # This assignment should succeed because "a" at this
 # point should have the type of "a" in the outer scope,

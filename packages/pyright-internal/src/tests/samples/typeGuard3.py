@@ -62,7 +62,7 @@ def func5(val: dict[_K, _V] | Mapping[_K, _V]):
 
 
 def is_cardinal_direction(val: str) -> StrictTypeGuard[Literal["N", "S", "E", "W"]]:
-    return val in ("N", "S", "E", "W")
+    return val in {"N", "S", "E", "W"}
 
 
 def func6(direction: Literal["NW", "E"]):

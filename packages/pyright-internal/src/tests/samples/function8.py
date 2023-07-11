@@ -31,8 +31,4 @@ takes_object(func2)
 
 
 def func3(b: Callable[[str], bool]) -> None:
-    if b == func1:
-        pass
-
-    if b != func2:
-        pass
+    pass

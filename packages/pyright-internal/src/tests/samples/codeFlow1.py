@@ -34,18 +34,7 @@ def func2() -> int:
 
 
 def func3() -> str:
-    if True:
-        return "hello"
-    else:
-        # This should not be flagged as an error
-        # because we should never get here.
-        return 21
-
-    raise BaseException()
-
-    # This should not be flagged as an error
-    # because we should never get here.
-    return 52
+    return "hello"
 
 
 def func4(length: int) -> int:

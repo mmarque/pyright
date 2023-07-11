@@ -56,7 +56,7 @@ def func3():
     v1["x1"] = 3
     reveal_type(v1["x1"], expected_text="Literal[3]")
 
-    v1[f"x2"] = 5
+    v1["x2"] = 5
     reveal_type(v1["x2"], expected_text="int")
 
     v1 = {}

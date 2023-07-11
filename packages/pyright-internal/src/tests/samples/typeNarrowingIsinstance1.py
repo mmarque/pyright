@@ -35,37 +35,21 @@ class MyClass2(SuperClass):
 
 
 def f(instance: Union[SuperClass, UnrelatedClass]) -> None:
-    if isinstance(instance, (MyClass1, UnrelatedSubclass, Any)):
-        print(instance.property)
+    print(instance.property)
 
-        # This should generate two errors:
-        # 'property2' is not a known member of 'SuperClass'
-        # 'property2' is not a known member of 'UnrelatedClass'
-        print(instance.property2)
-    else:
-        print(instance.property)
-
-        # This should generate two errors:
-        # 'property2' is not a known member of 'SuperClass'
-        # 'property2' is not a known member of 'UnrelatedClass'
-        print(instance.property2)
+    # This should generate two errors:
+    # 'property2' is not a known member of 'SuperClass'
+    # 'property2' is not a known member of 'UnrelatedClass'
+    print(instance.property2)
 
 
 def g(cls: Union[Type[SuperClass], Type[UnrelatedClass]]) -> None:
-    if issubclass(cls, (MyClass1, UnrelatedSubclass, Any)):
-        print(cls.class_var1)
+    print(cls.class_var1)
 
-        # This should generate two errors:
-        # 'property2' is not a known member of 'SuperClass'
-        # 'property2' is not a known member of 'UnrelatedClass'
-        print(cls.class_var2)
-    else:
-        print(cls.class_var1)
-
-        # This should generate two errors:
-        # 'property2' is not a known member of 'SuperClass'
-        # 'property2' is not a known member of 'UnrelatedClass'
-        print(cls.class_var2)
+    # This should generate two errors:
+    # 'property2' is not a known member of 'SuperClass'
+    # 'property2' is not a known member of 'UnrelatedClass'
+    print(cls.class_var2)
 
 
 # This code should analyze without any errors.

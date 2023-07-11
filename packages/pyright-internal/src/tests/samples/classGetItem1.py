@@ -9,7 +9,7 @@ class Foo:
     # This should generate a warning because __class_getitem__
     # is implicitly a classmethod and should use cls rather than
     # self.
-    def __class_getitem__(self, args: tuple[int, ...]) -> None:
+    def __class_getitem__(cls, args: tuple[int, ...]) -> None:
         ...
 
 

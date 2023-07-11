@@ -36,7 +36,7 @@ if dc1_1 == dc1_2:
 if dc1_1 != dc1_2:
     print("")
 
-if dc1_1 == None:
+if dc1_1 is None:
     print("")
 
 if dc1_1 != None:

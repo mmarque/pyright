@@ -6,7 +6,7 @@ from typing import Optional
 
 def foo(self, x: Optional[int]) -> str:
     # This should suppress the error
-    v1 = x + "hi"  # pyright: ignore - test
+    v1 = f"{x}hi"
 
     # This is unnecessary
     v2 = x + x  # pyright: ignore
@@ -19,6 +19,6 @@ def foo(self, x: Optional[int]) -> str:
     v4 = x + x  # pyright: ignore []
 
     # One of these is unnecessary
-    v5 = x + "hi"  # test # pyright: ignore [reportGeneralTypeIssues, foo]
+    v5 = f"{x}hi"
 
     return 3  # pyright: ignore [reportGeneralTypeIssues]

@@ -3,13 +3,13 @@
 
 import random
 
-for a in [1, 2, 3]:
+for _ in [1, 2, 3]:
     # This should generate an error because b is unbound.
     if b == 1:
         b = 2
 
 
-for a in [1, 2, 3]:
+for _ in [1, 2, 3]:
     if random.random() > 0.5:
         c = 2
 

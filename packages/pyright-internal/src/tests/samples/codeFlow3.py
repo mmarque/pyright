@@ -4,5 +4,3 @@
 
 def foo():
     message = ""
-    if False and message:
-        pass

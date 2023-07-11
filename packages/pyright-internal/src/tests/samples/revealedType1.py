@@ -3,10 +3,7 @@
 from typing import Literal, Union
 
 a: Union[str, int]
-if 2 + 3:
-    a = 3
-else:
-    a = "hello"
+a = 3 if 2 + 3 else "hello"
 reveal_type(a)
 
 a = 5

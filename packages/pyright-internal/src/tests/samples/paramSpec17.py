@@ -12,9 +12,9 @@ P = ParamSpec("P")
 
 def repr_func_call(func: Callable[P, object], *args: P.args, **kwargs: P.kwargs) -> str:
     arg_reprs = [repr(arg) for arg in args]
-    arg_reprs.extend(k + "=" + repr(v) for k, v in kwargs.items())
+    arg_reprs.extend(f"{k}={repr(v)}" for k, v in kwargs.items())
 
-    return func.__name__ + "(" + ", ".join(arg_reprs) + ")"
+    return f"{func.__name__}(" + ", ".join(arg_reprs) + ")"
 
 
 def print(

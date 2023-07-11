@@ -91,12 +91,12 @@ def func9():
 
 def func10():
     e = OSError()
-    a1 = os.name == "nt" and None == e.errno
+    a1 = os.name == "nt" and e.errno is None
     reveal_type(a1, expected_text="bool")
-  
+
     a2 = True and os.name == "nt"
     reveal_type(a2, expected_text="bool")
-              
+
     if os.name == "nt":
         # This should be marked unreachable.
         b = e.errno                            
@@ -104,9 +104,7 @@ def func10():
     if sys.version_info >= (4, 0):
         # This should be marked unreachable.
         b = e.errno
-         
+
     return
-    # This should be marked unreachable.
-    b = e.errno
 
     

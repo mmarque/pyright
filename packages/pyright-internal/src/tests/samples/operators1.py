@@ -43,8 +43,7 @@ def test():
     # value will result.
     needs_a_string(a != a)
 
-    if True:
-        a = B()
+    a = B()
 
     # At this point, a should be of type Union[Foo, Bar],
     # so the == operator should return either a str or

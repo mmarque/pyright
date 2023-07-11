@@ -51,10 +51,7 @@ def bar(x: str) -> str:
 
 
 def bar(x: Union[int, str]) -> Optional[str]:
-    if isinstance(x, int):
-        return None
-    else:
-        return x
+    return None if isinstance(x, int) else x
 
 
 # This should generate an error because ParamSpec cannot

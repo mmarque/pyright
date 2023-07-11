@@ -45,9 +45,9 @@ t
 # This should generate a diagnostic.
 [1, 2, 3]
 
-[x for x in range(3)]
+list(range(3))
 {x: x for x in range(3)}
-{x for x in range(3)}
+set(range(3))
 
 
 

@@ -39,9 +39,10 @@ def scandir(path: AnyStr) -> _ScandirIterator[AnyStr]:
 def thing(value: AnyStr):
     with scandir(value) as it:
         for file in it:
-            if isinstance(file.name, str):
-                if file.name.endswith(".xml"):
-                    ...
-            else:
-                if file.name.endswith(b".xml"):
-                    ...
+            if (
+                isinstance(file.name, str)
+                and file.name.endswith(".xml")
+                or not isinstance(file.name, str)
+                and file.name.endswith(b".xml")
+            ):
+                ...

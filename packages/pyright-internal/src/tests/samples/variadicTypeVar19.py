@@ -35,8 +35,8 @@ def func5(x: "Iterable[Union[*Ts]]") -> Iterable[Union[*Ts]]:
     ...
 
 def func6():
-   v1: list[int]  = [i for i in func5([1, 2, 3])]
-   v2: list[int | str] = [i for i in func5([1, "foo"])]
+   v1: list[int] = list(func5([1, 2, 3]))
+   v2: list[int | str] = list(func5([1, "foo"]))
 
 
 def func7(t: "tuple[*Ts]") -> "tuple[Union[*Ts], ...]": ...

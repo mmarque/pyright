@@ -2,15 +2,11 @@
 
 
 def add(a: int, b: int) -> int:
-    c = float(a + b)
-    # This should generate an error:
-    # Expression of type 'float' cannot be assigned to return type 'int'
-    return c
+    return float(a + b)
 
 
 def addf(a: float, b: float) -> float:
-    c = float(a + b)
-    return c
+    return float(a + b)
 
 
 # This should generate an error:

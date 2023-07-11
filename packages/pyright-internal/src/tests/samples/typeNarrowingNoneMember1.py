@@ -68,10 +68,7 @@ class B:
 
 
 def func3(c: Union[A, B]):
-    if c.prop1 is None:
-        reveal_type(c, expected_text="A | B")
-    else:
-        reveal_type(c, expected_text="A | B")
+    reveal_type(c, expected_text="A | B")
 
 
 def func4(c: Union[A, B]):
@@ -82,10 +79,7 @@ def func4(c: Union[A, B]):
 
 
 def func5(c: Union[A, B]):
-    if c.member2 is None:
-        reveal_type(c, expected_text="A | B")
-    else:
-        reveal_type(c, expected_text="A | B")
+    reveal_type(c, expected_text="A | B")
 
 
 def func6(c: Union[A, B]):

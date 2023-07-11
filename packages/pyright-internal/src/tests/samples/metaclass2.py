@@ -24,7 +24,7 @@ for i in Fruit:
 
 
 class Meta(type):
-    def foo(cls, some_param: str):
+    def foo(self, some_param: str):
         pass
 
 

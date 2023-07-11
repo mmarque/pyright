@@ -38,8 +38,8 @@ T = TypeVar("T")
 
 
 class MyMetaclass(type):
-    def __getitem__(cls: Type[T], item: int) -> T:
-        return cls()
+    def __getitem__(self, item: int) -> T:
+        return self()
 
 
 class ClassA(metaclass=MyMetaclass):

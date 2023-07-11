@@ -6,27 +6,19 @@ a = [1, 2, 3, 4]
 
 
 def func1() -> Generator[int, None, None]:
-    b = (elem for elem in a)
-    return b
+    return iter(a)
 
 
 def func2() -> Set[int]:
-    c = {elem for elem in a}
-    return c
+    return set(a)
 
 
 def func3() -> Set[str]:
-    c = {elem for elem in a}
-
-    # This should generate an error because
-    # c is a Set[int], which doesn't match
-    # the declared return type.
-    return c
+    return set(a)
 
 
 def generate():
-    for i in range(2):
-        yield i
+    yield from range(2)
 
 
 # Verify that generate returns a Generator.

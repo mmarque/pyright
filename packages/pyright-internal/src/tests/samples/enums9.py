@@ -11,8 +11,8 @@ reveal_type(EnumA.x.value, expected_text="int")
 
 
 class EnumC(str, Enum):
-    def _generate_next_value_(name, start, count, last_values) -> str:
-        return name
+    def _generate_next_value_(self, start, count, last_values) -> str:
+        return self
 
 
 class EnumD(EnumC):

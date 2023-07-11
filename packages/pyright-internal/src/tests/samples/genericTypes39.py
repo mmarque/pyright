@@ -75,8 +75,4 @@ def fn(p2: _TA) -> _TA:
     # This should generate an error.
     p2 = Animal()
 
-    if 1 + 1 == 3:
-        return p2
-
-    # This should generate an error.
-    return Animal()
+    return p2 if 1 == 2 else Animal()

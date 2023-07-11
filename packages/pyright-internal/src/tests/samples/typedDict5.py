@@ -43,8 +43,5 @@ movie5: Movie3 = Movie4(name="hello", year=1971, earnings=23)
 movie6 = Movie2(name="hello", year=1971)
 movie6["name"] = "goodbye"
 
-movie7 = {"name": "hello", "year": 1971}
-movie7["name"] = "goodbye"
-
-movie8: Movie2 = {"year": 1981, "name": "test"}
-movie8["year"] = 1982
+movie7 = {"year": 1971, "name": "goodbye"}
+movie8: Movie2 = {"name": "test", "year": 1982}

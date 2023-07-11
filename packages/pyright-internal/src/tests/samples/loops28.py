@@ -15,15 +15,10 @@ class A:
     def poll(self):
         assert self.pending is not None
         while True:
-            if self.pending:
-                pass
-
             ready, _ = futures.wait(self.pending)
 
             for future_id in ready:
                 self.pending.pop(future_id)
 
                 future_id.result()
-                if self.foo:
-                    pass
  

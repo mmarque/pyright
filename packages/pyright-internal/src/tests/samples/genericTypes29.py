@@ -17,4 +17,4 @@ channel_types: dict[str, int] = {}
 
 keys = channel_types.keys()
 
-options.update(dict.fromkeys(keys, 1))
+options |= dict.fromkeys(keys, 1)

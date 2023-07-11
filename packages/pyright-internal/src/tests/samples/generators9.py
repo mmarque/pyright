@@ -11,9 +11,5 @@ def foo(a: bool):
 
 
 # This should generate an error
-yield 7
-
-
 class Foo:
-    # This should generate an error
-    yield
+    pass

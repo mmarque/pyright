@@ -21,7 +21,7 @@ T = TypeVar("T")
 
 
 class MetaClass(type):
-    def __getattr__(cls, key: str) -> Callable[[T], T]:
+    def __getattr__(self, key: str) -> Callable[[T], T]:
         return lambda x: x
 
 

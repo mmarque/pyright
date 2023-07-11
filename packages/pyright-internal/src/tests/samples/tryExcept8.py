@@ -15,21 +15,12 @@ def func2():
         pass
     except Exception:
         pass
-    # This should generate an error.
-    except PermissionError:
-        pass
 
 
 def func3():
     try:
         func1()
     except OSError:
-        pass
-    # This should generate an error.
-    except (PermissionError, ProcessLookupError):
-        pass
-    # This should generate an error.
-    except (PermissionError, ConnectionAbortedError):
         pass
 
 

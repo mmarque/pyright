@@ -26,8 +26,7 @@ def f_generic2(val: T, op: Op[T]) -> T:
 
 def f_bool(val: bool) -> bool:
     op: Op[bool] = lambda od: od.val
-    r = f_generic1(val, op)
-    return r
+    return f_generic1(val, op)
 
 
 def f_generic3(val: T) -> T:
@@ -40,10 +39,7 @@ def f_union(val: Union[bool, str]) -> None:
     # type variable.
     f_generic3(val)
 
-    if isinstance(val, bool):
-        f_generic3(val)
-    else:
-        f_generic3(val)
+    f_generic3(val)
 
 
 def func1(v: T, t: Type[T]):

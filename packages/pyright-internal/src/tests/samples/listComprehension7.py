@@ -5,11 +5,13 @@
 outer_var = [1, 2]
 
 
+
+
 class A:
     var1 = [1, 2]
-    var2 = {x for x in var1}
+    var2 = set(var1)
 
     # This should generate an error.
-    var3 = {var1[0] for x in var1}
+    var3 = {var1[0] for _ in var1}
 
-    var4 = {outer_var[0] for x in outer_var}
+    var4 = {outer_var[0] for _ in outer_var}

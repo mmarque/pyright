@@ -7,4 +7,4 @@ int = 3
 
 
 max_ = max
-max = lambda a, b: a if a > b else b
+max = lambda a, b: max(a, b)

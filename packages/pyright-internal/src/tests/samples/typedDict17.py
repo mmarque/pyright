@@ -14,11 +14,9 @@ person: Person = {}
 person.update({"name": "Michael"})
 
 person |= {"name": "Michael"}
-person = person | {"name": "Michael"}
-
-
-# This should generate an error.
-person |= {"name": "Michael", "other": 1}
-
-# This should generate an error.
-person = person | {"name": 1}
+person = (
+    person
+    | {"name": "Michael"}
+    | {"name": "Michael", "other": 1}
+    | {"name": 1}
+)

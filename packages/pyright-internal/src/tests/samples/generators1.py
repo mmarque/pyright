@@ -69,8 +69,7 @@ def generator5() -> Iterator[ClassA]:
 
 
 def generate():
-    for i in range(2):
-        yield i
+    yield from range(2)
 
 
 s = generate()

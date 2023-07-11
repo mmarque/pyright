@@ -11,7 +11,7 @@ def func1() -> Generator[int, None, str]:
 def func2() -> Generator[int, int, None]:
     # This should generate an error because yield is not allowed
     # from within a list comprehension.
-    x = [(yield from func1()) for lel in range(5)]
+    x = [(yield from func1()) for _ in range(5)]
 
     v1 = yield from func1()
     reveal_type(v1, expected_text="str")

@@ -13,7 +13,7 @@ def do_the_thing(param: Union[Sequence[AnyStr], AnyStr]) -> None:
         print(f"bytes: {param!r}")
         return
 
-    print(f"list:")
+    print("list:")
     for itm in param:
         print(f"  -> {itm}")
 

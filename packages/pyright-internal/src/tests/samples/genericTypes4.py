@@ -2,8 +2,8 @@
 
 from typing import Union
 
-m = int(1)
-n = float(1.1)
+m = 1
+n = 1.1
 p = "hello"
 
 a = dict(x=m, y=m)

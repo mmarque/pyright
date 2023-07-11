@@ -24,4 +24,4 @@ def foo4(answer: p := default_value = 5):  # INVALID
 (lambda: x := 1) # INVALID
 lambda: (x := 1) # Valid, but unlikely to be useful
 (x := lambda: 1) # Valid
-lambda line: (m := re.match('pattern', 'line')) and m.group(1) # Valid
+lambda line: (m := re.match('pattern', 'line')) and m[1]

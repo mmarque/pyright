@@ -33,5 +33,4 @@ class A(object):
         self._B_or_C.always_noreturn()
 
     def m4(self) -> int:
-        x = self._B_or_C.sometimes_noreturn()
-        return x
+        return self._B_or_C.sometimes_noreturn()

@@ -16,7 +16,7 @@ class B:
 
 
 def func1(x: Union[A, B]) -> None:
-    is_a = not not isinstance(x, A)
+    is_a = isinstance(x, A)
 
     if not is_a:
         reveal_type(x, expected_text="B")
@@ -30,10 +30,7 @@ def func2(x: Union[A, B]) -> None:
     if random.random() < 0.5:
         x = B()
 
-    if is_a:
-        reveal_type(x, expected_text="B | A")
-    else:
-        reveal_type(x, expected_text="B | A")
+    reveal_type(x, expected_text="B | A")
 
 
 def func3(x: Optional[int]):
@@ -50,9 +47,7 @@ def func4() -> Optional[A]:
 
 
 maybe_a1 = func4()
-is_a1 = maybe_a1
-
-if is_a1:
+if is_a1 := maybe_a1:
     reveal_type(maybe_a1, expected_text="A")
 else:
     reveal_type(maybe_a1, expected_text="None")
@@ -67,21 +62,14 @@ def func5():
 
 is_a2 = maybe_a2
 
-if is_a2:
-    reveal_type(maybe_a2, expected_text="A | None")
-else:
-    reveal_type(maybe_a2, expected_text="A | None")
+reveal_type(maybe_a2, expected_text="A | None")
 
 
 def func6(x: Union[A, B]) -> None:
     is_a = isinstance(x, A)
 
-    for y in range(1):
-        if is_a:
-            reveal_type(x, expected_text="A | B")
-        else:
-            reveal_type(x, expected_text="A | B")
-
+    for _ in range(1):
+        reveal_type(x, expected_text="A | B")
         if random.random() < 0.5:
             x = B()
 
@@ -119,7 +107,7 @@ def func8(val: Optional[str] = None):
 
 
 def func9(var: Optional[str] = None):
-    if var_not_None := not (var is None):
+    if var_not_None := var is not None:
         reveal_type(var, expected_text="str")
 
     reveal_type(var, expected_text="str | None")
@@ -127,10 +115,6 @@ def func9(var: Optional[str] = None):
     if var_not_None:
         reveal_type(var, expected_text="str")
 
-    if 1 > 1 + 2:
-        var = None
-    else:
-        var = "a" + "b"
-
     if var_not_None:
+        var = None if 1 < -1 else "a" + "b"
         reveal_type(var, expected_text="Literal['ab'] | None")

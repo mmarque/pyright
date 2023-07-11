@@ -24,14 +24,11 @@ Either = Union[Left[E], Right[A]]
 
 
 def fmap(f: Callable[[A], B], either: Either[E, A]) -> Either[E, B]:
-    if isinstance(either, Right):
-        return Right(f(either.right))
-    else:
-        return either
+    return Right(f(either.right)) if isinstance(either, Right) else either
 
 
 def square(x: int) -> int:
-    return x * x
+    return x**2
 
 
 def accepts_only_left_str(p: Left[Any]):

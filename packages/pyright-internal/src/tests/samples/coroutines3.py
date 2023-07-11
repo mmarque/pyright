@@ -27,8 +27,7 @@ def old_style_coroutine2() -> AwaitableGenerator[Any, None, None, None]:
 
 
 async def func2() -> None:
-    x = await old_style_coroutine2()
-    return x
+    return await old_style_coroutine2()
 
 
 reveal_type(

@@ -32,10 +32,7 @@ def get_type_of_object(object: Union[Callable[..., Any], CustomClass]):
     if isinstance(object, LambdaType):
         return "is lambda"
 
-    if isinstance(object, Callable):
-        return "is callable"
-
-    return "nothing"
+    return "is callable" if isinstance(object, Callable) else "nothing"
 
 
 _T1 = TypeVar("_T1", bound=CustomClass)
@@ -52,6 +49,4 @@ _T2 = TypeVar("_T2")
 
 
 def func2(x: _T2) -> Union[_T2, int]:
-    if callable(x) and isfunction(x):
-        return 1
-    return x
+    return 1 if callable(x) and isfunction(x) else x

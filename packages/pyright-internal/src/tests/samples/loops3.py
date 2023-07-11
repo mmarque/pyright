@@ -5,7 +5,4 @@ from typing import Optional
 
 n: Optional[str] = None
 while True:
-    if n is None:
-        n = ""
-    else:
-        n = n + ""
+    n = "" if n is None else f"{n}"

@@ -26,10 +26,10 @@ def arith(
 
     a5 = 3 + v4
 
-    a6 = "hi" + v3
+    a6 = f"hi{v3}"
 
     # This should generate an error
-    a7 = "hi" + v4
+    a7 = f"hi{v4}"
 
     # This should generate an error
     a8 = 3 + v5
@@ -49,14 +49,14 @@ def comparison(
     a1 = v1 < v2
 
     # This should generate an error
-    a2 = 3 > v2
+    a2 = v2 < 3
 
-    a3 = 3 <= v3
+    a3 = v3 >= 3
 
     # This should generate an error
     a4 = 3 >= None
 
-    a5 = 3 < v4
+    a5 = v4 > 3
 
     a6 = "hi" < v3
 
@@ -64,7 +64,7 @@ def comparison(
     a7 = "hi" < v4
 
     # This should generate an error
-    a8 = 3 < v5
+    a8 = v5 > 3
 
     assert v5 is not None
-    a8 = 3 < v5
+    a8 = v5 > 3

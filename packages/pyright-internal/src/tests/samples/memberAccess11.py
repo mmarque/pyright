@@ -10,7 +10,7 @@ def method_decorator(
     method: UnboundMethodThatTakesIntAndReturnsStr,
 ) -> UnboundMethodThatTakesIntAndReturnsStr:
     def wrapper(self: "MyClass", a: int) -> str:
-        return "wrapped " + method(self, a)
+        return f"wrapped {method(self, a)}"
 
     return wrapper
 

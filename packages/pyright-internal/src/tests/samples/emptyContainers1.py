@@ -6,18 +6,10 @@ from typing import List
 
 
 def func1(a: bool):
-    val1 = []
-
-    if a:
-        val1 = [2, 3]
-
+    val1 = [2, 3] if a else []
     reveal_type(val1, expected_text="list[int]")
 
-    if a:
-        val2 = []
-    else:
-        val2 = []
-
+    val2 = []
     reveal_type(val2, expected_text="list[Unknown]")
 
     # This should generate an error because val2 is partially unknown.
@@ -38,18 +30,10 @@ def func1(a: bool):
 
 
 def func2(a: bool):
-    val1 = {}
-
-    if a:
-        val1 = {"a": 2}
-
+    val1 = {"a": 2} if a else {}
     reveal_type(val1, expected_text="dict[str, int]")
 
-    if a:
-        val2 = {}
-    else:
-        val2 = {}
-
+    val2 = {}
     reveal_type(val2, expected_text="dict[Unknown, Unknown]")
 
     # This should generate an error because val2 is partially unknown.

@@ -13,6 +13,4 @@ def g():
     yield from f()
 
 
-a: Dict[int, int] = {}
-for i in g():
-    a[i] = i
+a: Dict[int, int] = {i: i for i in g()}

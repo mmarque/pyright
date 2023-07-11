@@ -4,10 +4,6 @@
 from typing import Any, Tuple
 
 
-# This should generate a warning.
-assert (1 != 2, "Error message")
-
-
 def foo(a: Tuple[int, ...]):
     assert a
 

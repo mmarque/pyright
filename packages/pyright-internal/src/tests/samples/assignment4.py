@@ -15,6 +15,7 @@ AAATuple = Tuple[AAA, BBB, Callable[[Sequence[int], AAA], Sequence[float]]]
 
 def foo():
     var1: Dict[str, Tuple[AAA, BBB, CCC, DDD]] = {}
-    var2: Dict[str, AAATuple] = {}
-    for k, (var3, var4, _, _) in var1.items():
-        var2[k] = (var3, var4, lambda var5, var6: [v * var6 for v in var5])
+    var2: Dict[str, AAATuple] = {
+        k: (var3, var4, lambda var5, var6: [v * var6 for v in var5])
+        for k, (var3, var4, _, _) in var1.items()
+    }

@@ -6,27 +6,19 @@ a = [1, 2, 3, 4]
 
 
 def func1() -> Generator[int, None, None]:
-    b = (elem for elem in a)
-    return b
+    return iter(a)
 
 
 def func2() -> List[int]:
-    c = [elem for elem in a]
-    return c
+    return list(a)
 
 
 def func3() -> List[str]:
-    c = [elem for elem in a]
-
-    # This should generate an error because
-    # c is a List[int], which doesn't match
-    # the declared return type.
-    return c
+    return list(a)
 
 
 def generate():
-    for i in range(2):
-        yield i
+    yield from range(2)
 
 
 # Verify that generate returns a Generator.
@@ -38,7 +30,7 @@ FooOrBar = Literal["foo", "bar"]
 
 
 def to_list(values: Iterable[FooOrBar]) -> List[FooOrBar]:
-    return [value for value in values]
+    return list(values)
 
 x = 3
 # This should generate a syntax error.

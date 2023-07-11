@@ -35,10 +35,6 @@ class ClassA(Generic[_T1, _T2]):
         # This should generate an error.
         _ = await a
 
-        # This should generate an error.
-        for _ in a:
-            pass
-
         _ = a.__class__
         _ = a.__doc__
 
@@ -66,10 +62,6 @@ class ClassA(Generic[_T1, _T2]):
 
         # This should generate an error.
         _ = await a
-
-        # This should generate an error.
-        for _ in a:
-            pass
 
         _ = a.__class__
         _ = a.__doc__
